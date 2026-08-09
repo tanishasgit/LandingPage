@@ -1,31 +1,32 @@
-# Tanisha Biswal — Developer Portfolio
+# Tanisha Biswal — Portfolio
 
-A brutalist, interactive, and retro-inspired portfolio website built with HTML, CSS, and plain JavaScript. Designed with high-contrast neo-brutalist visuals, responsive grid layouts, and a light/dark theme toggle.
-
----
-
-## Highlights
-
-- Neo-brutalist visual design with high-contrast typography and dynamic sticker badges.
-- Blinking terminal interface and continuous scrolling marquee tickers.
-- Color-coded interactive timeline for academic and professional milestones.
-- Custom light and dark mode toggling using CSS variables.
-- Pure HTML, CSS, and JavaScript with zero external frameworks or heavy dependencies.
+A neo-brutalist, retro-inspired developer portfolio designed with loud typography, high contrast, and interactive web elements. Built completely from scratch with pure HTML, CSS, and vanilla JavaScript.
 
 ---
 
-## Built With
+## Why It Looks Like This
 
-- **HTML5:** Semantic markup structure.
-- **CSS3:** Custom properties (CSS variables), CSS grid, flexbox, and keyframe animations.
-- **JavaScript:** Client-side theme switching logic.
-- **Google Fonts:** *Bebas Neue* for headlines and *Space Mono* for body and UI elements.
+This portfolio embraces a raw, high-energy layout—combining dynamic marquee tickers, floating status stickers, interactive timeline blocks, and a blinking terminal prompt. No bloated JS frameworks, no heavy libraries, just pure frontend code.
 
 ---
 
-## Project Structure
+## Features
 
-```text
-├── index.html        # Main HTML file containing structure and styles
-├── profile.jpg       # Profile photo asset
-└── README.md         # Project documentation
+- **Neo-Brutalist Visuals:** Bold borders, hard drop shadows, and vivid accent colors.
+- **Theme Switcher:** Seamless light/dark toggle using CSS variables and local storage logic.
+- **Interactive Tickers:** Continuous, fast-scrolling marquee bars.
+- **Custom Timeline:** A color-coded, node-connected breakdown of academic and technical milestones.
+- **Zero Dependencies:** Fast load times with zero external NPM packages or UI frameworks.
+
+---
+
+## Tech Stack
+
+- **HTML5:** Clean, semantic structure.
+- **CSS3:** Custom properties, grid/flexbox layouts, and custom keyframe animations.
+- **JavaScript (ES6):** Client-side state handling for themes.
+- **Typography:** *Bebas Neue* for high-impact headers and *Space Mono* for code/UI elements.
+
+---
+
+
