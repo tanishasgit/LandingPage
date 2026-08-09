@@ -105,7 +105,7 @@
       .blink { animation: blinker 1s step-start infinite; }
       @keyframes blinker { 50% { opacity: 0; } }
 
-      /* Hero Stickers */
+      /* Strictly Static Hero Stickers */
       .sticker { 
         position: absolute; 
         padding: 10px 15px; 
@@ -115,6 +115,8 @@
         color: #1d1d1d; 
         border: 3px solid var(--ink); 
         box-shadow: 5px 5px 0 var(--ink); 
+        pointer-events: none; /* Disables clicks, hovers, and touches */
+        user-select: none;   /* Prevents text selection */
       }
       .year { left:1%; top:110px; background:var(--aqua); }
       .work { right:2%; top:105px; background:var(--pink); transform:rotate(6deg); }
