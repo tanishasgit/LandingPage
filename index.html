@@ -125,9 +125,30 @@
       
       .scroll { position:absolute; bottom:24px; font:11px "Space Mono",monospace; letter-spacing:.18em; }
       
-      /* Ticker styling */
-      .ticker { overflow:hidden; padding:12px 0; color:#1d1d1d; background:var(--yellow); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); white-space:nowrap; font:700 15px "Space Mono",monospace; }
-      .ticker span { display:inline-block; animation:slide 12s linear infinite; } @keyframes slide { to { transform:translateX(-50%); } }
+      /* Updated Ticker CSS */
+      .ticker { 
+        overflow:hidden; 
+        padding:12px 0; 
+        color:#1d1d1d; 
+        background:var(--yellow); 
+        border-top:3px solid var(--ink); 
+        border-bottom:3px solid var(--ink); 
+        white-space:nowrap; 
+        font:700 15px "Space Mono",monospace; 
+        display: flex;
+      }
+      
+      .ticker-track {
+        display: inline-flex;
+        width: max-content;
+        padding-left: 50vw; /* Starts initial text visually centered */
+        animation: slide 18s linear infinite;
+      }
+
+      @keyframes slide { 
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } 
+      }
       
       section { padding:104px 0; } .section-label { margin:0 0 12px; font:13px "Space Mono",monospace; } h2 { margin:0; font:400 clamp(42px,6vw,74px)/.95 "Bebas Neue",sans-serif; letter-spacing:.01em; }
       
@@ -197,7 +218,13 @@
       </main>
     </div>
     
-    <div class="ticker"><span>ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ &nbsp;</span></div>
+    <!-- Ticker 1: About Me -->
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ &nbsp;</span>
+        <span>ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ ABOUT ME ★ WHO AM I ★ TANISHA BISWAL ★ &nbsp;</span>
+      </div>
+    </div>
     
     <section id="about">
       <div class="wrap about-grid">
@@ -304,7 +331,13 @@
       </div>
     </section>
 
-    <div class="ticker"><span> SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT ✦ SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT &nbsp;</span></div>
+    <!-- Ticker 2: Contact -->
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT ✦ SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT &nbsp;</span>
+        <span>SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT ✦ SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT &nbsp;</span>
+      </div>
+    </div>
 
     <section class="contact" id="contact">
       <div class="wrap">
