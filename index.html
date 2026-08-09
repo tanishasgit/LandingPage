@@ -48,7 +48,7 @@
       /* Theme Toggle Button */
       .theme-btn { padding:7px 12px; background:var(--paper); color:var(--ink); border:2px solid var(--ink); cursor:pointer; font-family:"Space Mono",monospace; font-weight:bold; box-shadow:3px 3px 0 var(--ink); }
 
-      .hero { position:relative; min-height:590px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:78px 0 70px; text-align:center; user-select:none; }
+      .hero { position:relative; min-height:590px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:78px 0 70px; text-align:center; }
       .hello { padding:7px 12px; background:var(--paper); border:2px solid var(--ink); font-size:12px; }
       
       /* Blinking Green Dot */
@@ -105,7 +105,7 @@
       .blink { animation: blinker 1s step-start infinite; }
       @keyframes blinker { 50% { opacity: 0; } }
 
-      /* Draggable Stickers */
+      /* Hero Stickers */
       .sticker { 
         position: absolute; 
         padding: 10px 15px; 
@@ -115,11 +115,7 @@
         color: #1d1d1d; 
         border: 3px solid var(--ink); 
         box-shadow: 5px 5px 0 var(--ink); 
-        cursor: grab;
-        z-index: 10;
-        touch-action: none;
       }
-      .sticker:active { cursor: grabbing; box-shadow: 2px 2px 0 var(--ink); }
       .year { left:1%; top:110px; background:var(--aqua); }
       .work { right:2%; top:105px; background:var(--pink); transform:rotate(6deg); }
       .cs { left:3%; bottom:92px; background:var(--lime); }
@@ -186,7 +182,7 @@
         </div>
       </nav>
       <main id="top">
-        <section class="hero" id="heroSection" aria-label="Introduction">
+        <section class="hero" aria-label="Introduction">
           <div class="sticker year">🎓 2027</div>
           <div class="sticker work">◉ OPEN TO WORK</div>
           <div class="sticker cs">⚡ CS Undergrad</div>
@@ -338,40 +334,6 @@
           document.documentElement.setAttribute('data-theme', 'dark');
           btn.textContent = '☀️';
         }
-      });
-
-      /* --- Interactive Drag-and-Drop Stickers --- */
-      document.querySelectorAll('.sticker').forEach(sticker => {
-        let isDragging = false;
-        let offsetX = 0, offsetY = 0;
-
-        const startDrag = (e) => {
-          isDragging = true;
-          const clientX = e.clientX || e.touches[0].clientX;
-          const clientY = e.clientY || e.touches[0].clientY;
-          const rect = sticker.getBoundingClientRect();
-          offsetX = clientX - rect.left;
-          offsetY = clientY - rect.top;
-          sticker.style.position = 'fixed';
-          sticker.style.zIndex = 1000;
-        };
-
-        const onDrag = (e) => {
-          if (!isDragging) return;
-          const clientX = e.clientX || e.touches[0].clientX;
-          const clientY = e.clientY || e.touches[0].clientY;
-          sticker.style.left = `${clientX - offsetX}px`;
-          sticker.style.top = `${clientY - offsetY}px`;
-        };
-
-        const stopDrag = () => { isDragging = false; };
-
-        sticker.addEventListener('mousedown', startDrag);
-        sticker.addEventListener('touchstart', startDrag, { passive: true });
-        window.addEventListener('mousemove', onDrag);
-        window.addEventListener('touchmove', onDrag, { passive: true });
-        window.addEventListener('mouseup', stopDrag);
-        window.addEventListener('touchend', stopDrag);
       });
     </script>
   </body>
