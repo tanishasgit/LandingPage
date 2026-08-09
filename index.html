@@ -6,38 +6,38 @@
     <meta name="description" content="Portfolio of Tanisha Biswal, computer science undergraduate." />
     <title>Tanisha Biswal | Portfolio</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Oswald:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
       :root { --ink:#1d1d1d; --paper:#f8f5ed; --yellow:#ffdf19; --pink:#ff6999; --aqua:#54d5ce; --lime:#93e66b; --purple:#c981ed; --line:rgba(29,29,29,.09); }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; }
-      body { margin:0; color:var(--ink); background-color:var(--paper); background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:40px 40px; font-family:"Space Grotesk",Arial,sans-serif; }
+      body { margin:0; color:var(--ink); background-color:var(--paper); background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:40px 40px; font-family:"Space Mono",monospace; }
       a { color:inherit; }
       .wrap { width:min(1160px,calc(100% - 48px)); margin:auto; }
-      .tag, .button, .chip { border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); font-family:"DM Mono",monospace; font-weight:500; letter-spacing:.04em; }
+      .tag, .button, .chip { border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); font-family:"Space Mono",monospace; font-weight:700; letter-spacing:.04em; }
       nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
-      .logo { padding:9px 13px; background:var(--yellow); font-family:"Oswald",sans-serif; font-size:23px; letter-spacing:.09em; text-decoration:none; }
+      .logo { padding:9px 13px; background:var(--yellow); font-family:"Bebas Neue",sans-serif; font-size:28px; letter-spacing:.09em; text-decoration:none; }
       .links { display:flex; gap:10px; }
       .links a, .button { padding:9px 17px; background:var(--paper); text-decoration:none; font-size:14px; }
       .links a:hover, .button:hover { background:var(--yellow); }
       .hero { position:relative; min-height:590px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:78px 0 70px; text-align:center; }
       .hello { padding:7px 12px; background:var(--paper); font-size:12px; }
       .hello::before { content:""; display:inline-block; width:8px; height:8px; margin-right:10px; border:2px solid var(--ink); border-radius:50%; background:var(--lime); }
-      h1 { margin:20px 0 16px; font-family:"Oswald",Impact,sans-serif; font-size:clamp(66px,11vw,138px); font-weight:700; line-height:.88; letter-spacing:.02em; }
+      h1 { margin:20px 0 16px; font-family:"Bebas Neue",sans-serif; font-size:clamp(66px,11vw,138px); font-weight:400; line-height:.88; letter-spacing:.02em; }
       h1 span { display:block; width:max-content; max-width:100%; margin:8px auto 0; padding:0 18px 5px; background:var(--yellow); border:4px solid var(--ink); box-shadow:7px 7px 0 var(--ink); transform:rotate(-1deg); }
-      .terminal { padding:13px 18px; background:#fff; font-family:"DM Mono",monospace; font-size:clamp(17px,2.4vw,25px); font-weight:500; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); }
-      .sticker { position:absolute; padding:10px 15px; font-family:"DM Mono",monospace; font-size:13px; font-weight:500; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); }
+      .terminal { padding:13px 18px; background:#fff; font-family:"Space Mono",monospace; font-size:clamp(17px,2.4vw,25px); font-weight:700; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); }
+      .sticker { position:absolute; padding:10px 15px; font-family:"Space Mono",monospace; font-size:13px; font-weight:700; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); }
       .year { left:1%; top:110px; background:var(--aqua); }.work { right:2%; top:105px; background:var(--pink); transform:rotate(6deg); }.cs { left:3%; bottom:92px; background:var(--lime); }.ai { right:2%; bottom:106px; background:var(--purple); }
-      .scroll { position:absolute; bottom:24px; font:11px "DM Mono",monospace; letter-spacing:.18em; }
-      .ticker { overflow:hidden; padding:12px 0; color:var(--paper); background:var(--ink); white-space:nowrap; font:15px "DM Mono",monospace; }
+      .scroll { position:absolute; bottom:24px; font:11px "Space Mono",monospace; letter-spacing:.18em; }
+      .ticker { overflow:hidden; padding:12px 0; color:var(--paper); background:var(--ink); white-space:nowrap; font:15px "Space Mono",monospace; }
       .ticker span { display:inline-block; animation:slide 25s linear infinite; } @keyframes slide { to { transform:translateX(-50%); } }
-      section { padding:104px 0; } .section-label { margin:0 0 12px; font:13px "DM Mono",monospace; } h2 { margin:0; font:600 clamp(42px,6vw,74px)/.95 "Oswald",sans-serif; letter-spacing:.01em; }
-      .about-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:100px; align-items:start; }.about-copy { font-size:20px; line-height:1.55; }.about-copy p { margin:0 0 22px; }
+      section { padding:104px 0; } .section-label { margin:0 0 12px; font:13px "Space Mono",monospace; } h2 { margin:0; font:400 clamp(42px,6vw,74px)/.95 "Bebas Neue",sans-serif; letter-spacing:.01em; }
+      .about-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:100px; align-items:start; }.about-copy { font-size:18px; line-height:1.55; }.about-copy p { margin:0 0 22px; }
       .skills { display:flex; flex-wrap:wrap; gap:13px; margin-top:38px; }.chip { padding:10px 14px; background:var(--paper); font-size:13px; box-shadow:3px 3px 0 var(--ink); }.chip:nth-child(3n+1){background:var(--aqua)}.chip:nth-child(3n+2){background:var(--yellow)}.chip:nth-child(3n){background:var(--pink)}
-      .project-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:34px; }.project-head p { max-width:300px; margin:0; font:14px/1.5 "DM Mono",monospace; }.projects { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }.card { min-height:330px; padding:22px; display:flex; flex-direction:column; border:3px solid var(--ink); background:var(--paper); box-shadow:7px 7px 0 var(--ink); }.card:nth-child(1){background:var(--yellow)}.card:nth-child(2){background:var(--aqua)}.card:nth-child(3){background:var(--purple)}.card small { font:12px "DM Mono",monospace; }.card h3 { margin:46px 0 14px; font:600 31px/1 "Oswald",sans-serif; }.card p { font-size:15px; line-height:1.45; }.stack { margin-top:auto; display:flex; flex-wrap:wrap; gap:7px; }.stack span { padding:5px 7px; border:2px solid var(--ink); background:rgba(255,255,255,.55); font:11px "DM Mono",monospace; }.card a { margin-top:20px; font:13px "DM Mono",monospace; font-weight:bold; }
-      .journey { display:grid; gap:16px; margin-top:36px; }.entry { display:grid; grid-template-columns:110px 1fr auto; gap:24px; align-items:center; padding:24px; border:3px solid var(--ink); background:#fff; box-shadow:5px 5px 0 var(--ink); }.entry time { font:13px "DM Mono",monospace; }.entry h3 { margin:0 0 5px; font-size:18px; }.entry p { margin:0; font-size:14px; }.entry span { font:12px "DM Mono",monospace; }
+      .project-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:34px; }.project-head p { max-width:300px; margin:0; font:14px/1.5 "Space Mono",monospace; }.projects { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }.card { min-height:330px; padding:22px; display:flex; flex-direction:column; border:3px solid var(--ink); background:var(--paper); box-shadow:7px 7px 0 var(--ink); }.card:nth-child(1){background:var(--yellow)}.card:nth-child(2){background:var(--aqua)}.card:nth-child(3){background:var(--purple)}.card small { font:12px "Space Mono",monospace; }.card h3 { margin:46px 0 14px; font:400 36px/1 "Bebas Neue",sans-serif; letter-spacing:.02em; }.card p { font-size:14px; line-height:1.45; }.stack { margin-top:auto; display:flex; flex-wrap:wrap; gap:7px; }.stack span { padding:5px 7px; border:2px solid var(--ink); background:rgba(255,255,255,.55); font:11px "Space Mono",monospace; }.card a { margin-top:20px; font:13px "Space Mono",monospace; font-weight:bold; }
+      .journey { display:grid; gap:16px; margin-top:36px; }.entry { display:grid; grid-template-columns:110px 1fr auto; gap:24px; align-items:center; padding:24px; border:3px solid var(--ink); background:#fff; box-shadow:5px 5px 0 var(--ink); }.entry time { font:13px "Space Mono",monospace; }.entry h3 { margin:0 0 5px; font-size:18px; }.entry p { margin:0; font-size:14px; }.entry span { font:12px "Space Mono",monospace; }
       .contact { padding-bottom:70px; text-align:center; }.contact h2 { font-size:clamp(55px,9vw,110px); }.contact p { max-width:520px; margin:20px auto 30px; font-size:18px; }.contact .button { display:inline-block; padding:15px 23px; background:var(--pink); font-size:16px; }
-      footer { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-top:3px solid var(--ink); font:12px "DM Mono",monospace; }.socials { display:flex; gap:18px; }
+      footer { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-top:3px solid var(--ink); font:12px "Space Mono",monospace; }.socials { display:flex; gap:18px; }
       @media (max-width:760px) { .wrap{width:min(100% - 32px,1160px)} nav{align-items:flex-start}.links{justify-content:flex-end; flex-wrap:wrap; gap:7px}.links a{padding:7px 9px;font-size:11px}.hero{min-height:630px;padding-top:110px}.sticker{font-size:11px;padding:8px 10px}.year{top:65px;left:3%}.work{top:67px;right:3%}.cs{bottom:105px;left:2%}.ai{bottom:106px;right:2%}.terminal{font-size:16px;padding:11px}.about-grid,.projects{grid-template-columns:1fr;gap:42px}section{padding:70px 0}.projects{gap:22px}.card{min-height:280px}.entry{grid-template-columns:1fr;gap:10px}.entry span{display:none}.project-head{display:block}.project-head p{margin-top:16px}footer{align-items:flex-start;gap:14px;flex-direction:column} }
     </style>
   </head>
