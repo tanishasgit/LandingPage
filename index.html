@@ -223,9 +223,49 @@
       .entry .desc { margin:0; font-size:14px; line-height:1.5; opacity:0.9; }
 
       .contact { padding-bottom:70px; text-align:center; }.contact h2 { font-size:clamp(55px,9vw,110px); }.contact p { max-width:520px; margin:20px auto 30px; font-size:18px; }.contact .button { display:inline-block; padding:15px 23px; background:var(--pink); color:#1d1d1d; font-size:16px; }
-      footer { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-top:3px solid var(--ink); font:12px "Space Mono",monospace; }.socials { display:flex; gap:18px; }
+      
+      /* Footer & Sign-Off Styling */
+      footer { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-top:3px solid var(--ink); font:12px "Space Mono",monospace; }
+      .socials { display:flex; gap:18px; }
 
-      @media (max-width:760px) { .wrap{width:min(100% - 32px,1160px)} nav{align-items:flex-start}.links{justify-content:flex-end; flex-wrap:wrap; gap:7px}.links a{padding:7px 9px;font-size:11px}.hero{min-height:630px;padding-top:110px}.sticker{font-size:11px;padding:8px 10px}.year{top:65px;left:3%}.work{top:67px;right:3%}.cs{bottom:105px;left:2%}.ai{bottom:106px;right:2%}.terminal{font-size:16px;padding:11px}.about-grid,.projects{grid-template-columns:1fr;gap:42px}section{padding:70px 0}.projects{gap:22px}.card{min-height:280px}.journey-timeline{padding-left:24px}.entry-header{flex-direction:column;align-items:flex-start}.entry::before{left:-34px}.project-head{display:block}.project-head p{margin-top:16px}footer{align-items:flex-start;gap:14px;flex-direction:column} }
+      .footer-signoff {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 2px;
+      }
+      .footer-signoff p {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 700;
+        opacity: 0.8;
+      }
+      .footer-sig {
+        height: 38px;
+        width: auto;
+        display: block;
+        transition: filter 0.3s ease;
+      }
+      [data-theme="dark"] .footer-sig {
+        filter: invert(1); /* Keeps signature image visible on dark background */
+      }
+      .stamp {
+        padding: 4px 8px;
+        background: var(--pink);
+        color: #1d1d1d;
+        border: 2px solid var(--ink);
+        font-size: 10px;
+        font-weight: 700;
+        box-shadow: 3px 3px 0 var(--ink);
+        transform: rotate(-2deg);
+        letter-spacing: .04em;
+      }
+
+      @media (max-width:760px) { 
+        .wrap{width:min(100% - 32px,1160px)} nav{align-items:flex-start}.links{justify-content:flex-end; flex-wrap:wrap; gap:7px}.links a{padding:7px 9px;font-size:11px}.hero{min-height:630px;padding-top:110px}.sticker{font-size:11px;padding:8px 10px}.year{top:65px;left:3%}.work{top:67px;right:3%}.cs{bottom:105px;left:2%}.ai{bottom:106px;right:2%}.terminal{font-size:16px;padding:11px}.about-grid,.projects{grid-template-columns:1fr;gap:42px}section{padding:70px 0}.projects{gap:22px}.card{min-height:280px}.journey-timeline{padding-left:24px}.entry-header{flex-direction:column;align-items:flex-start}.entry::before{left:-34px}.project-head{display:block}.project-head p{margin-top:16px}
+        footer{align-items:flex-start;gap:18px;flex-direction:column}
+        .footer-signoff { flex-wrap: wrap; gap: 8px; }
+      }
     </style>
   </head>
   <body>
@@ -390,7 +430,15 @@
     </section>
 
     <footer class="wrap">
-      <div><strong>portfolio</strong> &nbsp; Tanisha Biswal © 2026</div>
+      <div>
+        <strong>portfolio</strong> &nbsp; Tanisha Biswal © 2026
+        <!-- Neo-Brutalist Sign-Off Stamp -->
+        <div class="footer-signoff">
+          <p>Crafted &amp; Coded by</p>
+          <img src="signature.svg" alt="Tanisha Biswal Signature" class="footer-sig" onerror="this.style.display='none'" />
+          <div class="stamp">OFFICIAL ✦</div>
+        </div>
+      </div>
       <div class="socials">
         <a href="https://github.com/tanishasgit">GitHub</a>
         <a href="https://www.linkedin.com/in/tanisha-biswal">LinkedIn</a>
