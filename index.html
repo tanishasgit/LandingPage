@@ -77,7 +77,26 @@
       .wrap { width:min(1160px,calc(100% - 48px)); margin:auto; }
       .tag, .button, .chip { border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); font-family:"Space Mono",monospace; font-weight:700; letter-spacing:.04em; }
       nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
-      .logo { padding:9px 13px; background:var(--yellow); color:#1d1d1d; font-family:"Bebas Neue",sans-serif; font-size:28px; letter-spacing:.09em; text-decoration:none; }
+    .logo { 
+  padding: 9px 13px; 
+  background: var(--yellow); 
+  color: #1d1d1d; 
+  font-family: "Bebas Neue", sans-serif; 
+  font-size: 28px; 
+  letter-spacing: .09em; 
+  text-decoration: none; 
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  display: inline-block;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, text-shadow 0.15s ease;
+}
+
+/* Glitch hover effect */
+.logo:hover {
+  text-shadow: 2px 0 var(--pink), -2px 0 var(--aqua);
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--ink);
+}
       .links { display:flex; gap:10px; align-items:center; }
       .links a, .button { padding:9px 17px; background:var(--paper); text-decoration:none; font-size:14px; border:2px solid var(--ink); }
       .links a:hover, .button:hover { background:var(--yellow); color:#1d1d1d; }
