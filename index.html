@@ -250,16 +250,16 @@
         filter: invert(1); /* Keeps signature image visible on dark background */
       }
       .stamp {
-        padding: 4px 8px;
-        background: var(--pink);
-        color: #1d1d1d;
-        border: 2px solid var(--ink);
-        font-size: 10px;
-        font-weight: 700;
-        box-shadow: 3px 3px 0 var(--ink);
-        transform: rotate(-2deg);
-        letter-spacing: .04em;
-      }
+  padding: 2px 6px;             /* Reduced padding (was 4px 8px) */
+  background: var(--pink);
+  color: #1d1d1d;
+  border: 2px solid var(--ink);
+  font-size: 8px;               /* Reduced font size (was 10px) */
+  font-weight: 700;
+  box-shadow: 2px 2px 0 var(--ink); /* Smaller hard shadow (was 3px 3px) */
+  transform: rotate(-2deg);
+  letter-spacing: .04em;
+}
 
       @media (max-width:760px) { 
         .wrap{width:min(100% - 32px,1160px)} nav{align-items:flex-start}.links{justify-content:flex-end; flex-wrap:wrap; gap:7px}.links a{padding:7px 9px;font-size:11px}.hero{min-height:630px;padding-top:110px}.sticker{font-size:11px;padding:8px 10px}.year{top:65px;left:3%}.work{top:67px;right:3%}.cs{bottom:105px;left:2%}.ai{bottom:106px;right:2%}.terminal{font-size:16px;padding:11px}.about-grid,.projects{grid-template-columns:1fr;gap:42px}section{padding:70px 0}.projects{gap:22px}.card{min-height:280px}.journey-timeline{padding-left:24px}.entry-header{flex-direction:column;align-items:flex-start}.entry::before{left:-34px}.project-head{display:block}.project-head p{margin-top:16px}
