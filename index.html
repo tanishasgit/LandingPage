@@ -100,6 +100,9 @@
       .links { display:flex; gap:10px; align-items:center; }
       .links a, .button { padding:9px 17px; background:var(--paper); text-decoration:none; font-size:14px; border:2px solid var(--ink); }
       .links a:hover, .button:hover { background:var(--yellow); color:#1d1d1d; }
+
+      /* Active nav link highlighting */
+      .links a.active { background:var(--yellow); color:#1d1d1d; }
       
       /* Theme Toggle Button */
       .theme-btn { padding:7px 12px; background:var(--paper); color:var(--ink); border:2px solid var(--ink); cursor:pointer; font-family:"Space Mono",monospace; font-weight:bold; box-shadow:3px 3px 0 var(--ink); }
@@ -161,7 +164,7 @@
       .blink { animation: blinker 1s step-start infinite; }
       @keyframes blinker { 50% { opacity: 0; } }
 
-      /* Strictly Static Hero Stickers */
+      /* Hero Stickers (now with wiggle-on-scroll transition) */
       .sticker { 
         position: absolute; 
         padding: 10px 15px; 
@@ -173,6 +176,7 @@
         box-shadow: 5px 5px 0 var(--ink); 
         pointer-events: none; /* Disables clicks, hovers, and touches */
         user-select: none;   /* Prevents text selection */
+        transition: transform 0.2s ease-out;
       }
       .year { left:1%; top:110px; background:var(--aqua); }
       .work { right:2%; top:105px; background:var(--pink); transform:rotate(6deg); }
@@ -217,6 +221,15 @@
 
       .skills { display:flex; flex-wrap:wrap; gap:13px; margin-top:38px; }.chip { padding:10px 14px; background:var(--paper); color:#1d1d1d; font-size:13px; box-shadow:3px 3px 0 var(--ink); }.chip:nth-child(3n+1){background:var(--aqua)}.chip:nth-child(3n+2){background:var(--yellow)}.chip:nth-child(3n){background:var(--pink)}
       .project-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:34px; }.project-head p { max-width:300px; margin:0; font:14px/1.5 "Space Mono",monospace; }.projects { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }.card { min-height:330px; padding:22px; color:#1d1d1d; display:flex; flex-direction:column; border:3px solid var(--ink); background:var(--paper); box-shadow:7px 7px 0 var(--ink); }.card:nth-child(1){background:var(--yellow)}.card:nth-child(2){background:var(--aqua)}.card:nth-child(3){background:var(--purple)}.card small { font:12px "Space Mono",monospace; }.card h3 { margin:46px 0 14px; font:400 36px/1 "Bebas Neue",sans-serif; letter-spacing:.02em; }.card p { font-size:14px; line-height:1.45; }.stack { margin-top:auto; display:flex; flex-wrap:wrap; gap:7px; }.stack span { padding:5px 7px; border:2px solid var(--ink); background:rgba(255,255,255,.55); font:11px "Space Mono",monospace; }.card a { margin-top:20px; font:13px "Space Mono",monospace; font-weight:bold; }
+
+      /* Project card 3D tilt-on-hover */
+      .card {
+        transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+        will-change: transform;
+      }
+      .card:hover {
+        box-shadow: 10px 10px 0 var(--ink);
+      }
       
       /* Colorful Timeline Journey */
       .journey-timeline { position:relative; margin-top:36px; padding-left:36px; border-left:4px solid var(--yellow); display:grid; gap:28px; }
@@ -280,10 +293,44 @@
   letter-spacing: .04em;
 }
 
+      /* Cursor-following grid blob */
+      .grid-blob {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--yellow);
+        border: 2px solid var(--ink);
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: left 0.12s ease-out, top 0.12s ease-out, background 0.3s ease;
+      }
+
+      /* Scroll-triggered reveal animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       @media (max-width:760px) { 
         .wrap{width:min(100% - 32px,1160px)} nav{align-items:flex-start}.links{justify-content:flex-end; flex-wrap:wrap; gap:7px}.links a{padding:7px 9px;font-size:11px}.hero{min-height:630px;padding-top:110px}.sticker{font-size:11px;padding:8px 10px}.year{top:65px;left:3%}.work{top:67px;right:3%}.cs{bottom:105px;left:2%}.ai{bottom:106px;right:2%}.terminal{font-size:16px;padding:11px}.about-grid,.projects{grid-template-columns:1fr;gap:42px}section{padding:70px 0}.projects{gap:22px}.card{min-height:280px}.journey-timeline{padding-left:24px}.entry-header{flex-direction:column;align-items:flex-start}.entry::before{left:-34px}.project-head{display:block}.project-head p{margin-top:16px}
         footer{align-items:flex-start;gap:18px;flex-direction:column}
         .footer-signoff { flex-wrap: wrap; gap: 8px; }
+        .grid-blob { display:none; }
+      }
+
+      /* Respect reduced motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .card, .sticker, .grid-blob { transition: none; }
       }
     </style>
   </head>
@@ -478,6 +525,84 @@
           btn.textContent = '☀️';
         }
       });
+
+      /* --- NEW: Cursor-following grid blob (snaps to the 40px background grid) --- */
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && window.matchMedia('(min-width: 761px)').matches) {
+        const blob = document.createElement('div');
+        blob.className = 'grid-blob';
+        document.body.appendChild(blob);
+        const GRID_SIZE = 40;
+        window.addEventListener('mousemove', (e) => {
+          const snappedX = Math.round(e.clientX / GRID_SIZE) * GRID_SIZE;
+          const snappedY = Math.round(e.clientY / GRID_SIZE) * GRID_SIZE;
+          blob.style.left = snappedX + 'px';
+          blob.style.top = snappedY + 'px';
+        });
+      }
+
+      /* --- NEW: Active nav link highlighting on scroll --- */
+      const navLinks = Array.from(document.querySelectorAll('.links a[href^="#"]'));
+      const navSections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const activeHref = '#' + entry.target.id;
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === activeHref);
+            });
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      navSections.forEach(section => navObserver.observe(section));
+
+      /* --- NEW: Scroll-triggered reveal animations for project cards & journey entries --- */
+      const revealTargets = document.querySelectorAll('.card, .entry');
+      if (prefersReducedMotion) {
+        revealTargets.forEach(el => el.classList.add('reveal', 'is-visible'));
+      } else {
+        revealTargets.forEach(el => el.classList.add('reveal'));
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        revealTargets.forEach(el => revealObserver.observe(el));
+      }
+
+      /* --- NEW: Sticker wiggle on scroll (subtle parallax rotation) --- */
+      if (!prefersReducedMotion) {
+        const stickers = document.querySelectorAll('.sticker');
+        window.addEventListener('scroll', () => {
+          stickers.forEach((sticker, i) => {
+            const dir = i % 2 === 0 ? 1 : -1;
+            const rotation = ((window.scrollY * 0.03 * dir) % 10);
+            sticker.style.transform = `rotate(${rotation}deg)`;
+          });
+        }, { passive: true });
+      }
+
+      /* --- NEW: Project card 3D tilt-on-hover --- */
+      if (!prefersReducedMotion) {
+        document.querySelectorAll('.card').forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+            const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+          });
+        });
+      }
     </script>
   </body>
 </html>
