@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>Tanisha Biswal | CS Undergrad & AI Agent Developer</title>
+    <title>Tanisha Biswal | CS Undergrad </title>
     <meta name="description" content="Portfolio of Tanisha Biswal, a Computer Science student specializing in Java, Frontend Development, Machine Learning, and AI Agents." />
     <meta name="keywords" content="Tanisha Biswal, Portfolio, Computer Science, AI Agents, Machine Learning, Java Developer, Frontend Developer, Siksha 'O' Anusandhan" />
     <meta name="author" content="Tanisha Biswal" />
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" /> <meta property="og:title" content="Tanisha Biswal | CS Undergrad & AI Agent Developer" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:title" content="Tanisha Biswal | CS Undergrad & AI Agent Developer" />
     <meta property="og:description" content="Explore AI projects, machine learning applications, and web tools built by Tanisha Biswal." />
-    <meta property="og:image" content="https://yourdomain.com/preview.png" /> <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://yourdomain.com/preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://yourdomain.com/" />
     <meta name="twitter:title" content="Tanisha Biswal | CS Undergrad & AI Agent Developer" />
     <meta name="twitter:description" content="Explore AI projects, machine learning applications, and web tools built by Tanisha Biswal." />
@@ -70,26 +72,26 @@
       .wrap { width:min(1160px,calc(100% - 48px)); margin:auto; }
       .tag, .button, .chip { border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); font-family:"Space Mono",monospace; font-weight:700; letter-spacing:.04em; }
       nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
-    .logo { 
-  padding: 9px 13px; 
-  background: var(--yellow); 
-  color: #1d1d1d; 
-  font-family: "Bebas Neue", sans-serif; 
-  font-size: 28px; 
-  letter-spacing: .09em; 
-  text-decoration: none; 
-  border: 3px solid var(--ink);
-  box-shadow: 5px 5px 0 var(--ink);
-  display: inline-block;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, text-shadow 0.15s ease;
-}
+      .logo { 
+        padding: 9px 13px; 
+        background: var(--yellow); 
+        color: #1d1d1d; 
+        font-family: "Bebas Neue", sans-serif; 
+        font-size: 28px; 
+        letter-spacing: .09em; 
+        text-decoration: none; 
+        border: 3px solid var(--ink);
+        box-shadow: 5px 5px 0 var(--ink);
+        display: inline-block;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, text-shadow 0.15s ease;
+      }
 
-/* Glitch hover effect */
-.logo:hover {
-  text-shadow: 2px 0 var(--pink), -2px 0 var(--aqua);
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--ink);
-}
+      /* Glitch hover effect */
+      .logo:hover {
+        text-shadow: 2px 0 var(--pink), -2px 0 var(--aqua);
+        transform: translate(-2px, -2px);
+        box-shadow: 7px 7px 0 var(--ink);
+      }
       .links { display:flex; gap:10px; align-items:center; }
       .links a, .button { padding:9px 17px; background:var(--paper); text-decoration:none; font-size:14px; border:2px solid var(--ink); }
       .links a:hover, .button:hover { background:var(--yellow); color:#1d1d1d; }
@@ -157,7 +159,7 @@
       .blink { animation: blinker 1s step-start infinite; }
       @keyframes blinker { 50% { opacity: 0; } }
 
-      /* Hero Stickers (now with wiggle-on-scroll transition) */
+      /* Hero Stickers */
       .sticker { 
         position: absolute; 
         padding: 10px 15px; 
@@ -167,8 +169,8 @@
         color: #1d1d1d; 
         border: 3px solid var(--ink); 
         box-shadow: 5px 5px 0 var(--ink); 
-        pointer-events: none; /* Disables clicks, hovers, and touches */
-        user-select: none;   /* Prevents text selection */
+        pointer-events: none; 
+        user-select: none; 
         transition: transform 0.2s ease-out;
       }
       .year { left:1%; top:110px; background:var(--aqua); }
@@ -178,7 +180,7 @@
       
       .scroll { position:absolute; bottom:24px; font:11px "Space Mono",monospace; letter-spacing:.18em; }
       
-      /* Updated Ticker CSS */
+      /* Ticker CSS */
       .ticker { 
         overflow:hidden; 
         padding:12px 0; 
@@ -194,7 +196,7 @@
       .ticker-track {
         display: inline-flex;
         width: max-content;
-        padding-left: 50vw; /* Starts initial text visually centered */
+        padding-left: 50vw;
         animation: slide 18s linear infinite;
       }
 
@@ -251,7 +253,31 @@
       
       /* Footer & Sign-Off Styling */
       footer { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-top:3px solid var(--ink); font:12px "Space Mono",monospace; }
-      .socials { display:flex; gap:18px; }
+      
+      /* Styled Social Logo Boxes */
+      .socials { display:flex; gap:14px; align-items:center; }
+      .social-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 3px solid var(--ink);
+        box-shadow: 4px 4px 0 var(--ink);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .social-box svg {
+        width: 22px;
+        height: 22px;
+        fill: #1d1d1d;
+      }
+      .social-box.github { background: var(--pink); }
+      .social-box.linkedin { background: var(--aqua); }
+      .social-box.email { background: var(--purple); }
+      .social-box:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--ink);
+      }
 
       .footer-signoff {
         display: flex;
@@ -266,25 +292,25 @@
         opacity: 0.8;
       }
       .footer-sig {
-  height: 22px; /* Reduced height (was 38px) */
-  width: auto;
-  display: block;
-  transition: filter 0.3s ease;
-}
+        height: 22px;
+        width: auto;
+        display: block;
+        transition: filter 0.3s ease;
+      }
       [data-theme="dark"] .footer-sig {
-        filter: invert(1); /* Keeps signature image visible on dark background */
+        filter: invert(1);
       }
       .stamp {
-  padding: 2px 6px;              /* Reduced padding (was 4px 8px) */
-  background: var(--pink);
-  color: #1d1d1d;
-  border: 2px solid var(--ink);
-  font-size: 8px;               /* Reduced font size (was 10px) */
-  font-weight: 700;
-  box-shadow: 2px 2px 0 var(--ink); /* Smaller hard shadow (was 3px 3px) */
-  transform: rotate(-2deg);
-  letter-spacing: .04em;
-}
+        padding: 2px 6px;
+        background: var(--pink);
+        color: #1d1d1d;
+        border: 2px solid var(--ink);
+        font-size: 8px;
+        font-weight: 700;
+        box-shadow: 2px 2px 0 var(--ink);
+        transform: rotate(-2deg);
+        letter-spacing: .04em;
+      }
 
       /* Cursor-following grid blob */
       .grid-blob {
@@ -373,11 +399,11 @@
           </div>
         </div>
         <div class="about-copy">
-         <p>I build things with code.</p>
+          <p>I build things with code.</p>
 
-<p>I’m a builder studying Computer Science, motivated by a constant drive for ingenuity and novel design. Day to day, I work with Java and frontend tools. But my real focus is Machine Learning, especially autonomous AI agents that can figure out their next steps on their own.</p>
+          <p>I’m a builder studying Computer Science, motivated by a constant drive for ingenuity and novel design. Day to day, I work with Java and frontend tools. But my real focus is Machine Learning, especially autonomous AI agents that can figure out their next steps on their own.</p>
 
-<p>Tech is moving fast, and I’m locked in on creating what’s next.</p>
+          <p>Tech is moving fast, and I’m locked in on creating what’s next.</p>
         </div>
       </div>
     </section>
@@ -442,154 +468,4 @@
               <h3>B.Tech, Computer Science &amp; Information Technology</h3>
               <span class="status">Graduating 2027</span>
             </div>
-            <div class="institution">Siksha 'O' Anusandhan Deemed to be University</div>
-            <p class="desc">Building foundations in Java, frontend development, computer networking, machine learning, and object-oriented programming.</p>
-          </article>
-
-          <article class="entry aqua-box">
-            <div class="entry-header">
-              <h3>Class 12, CBSE</h3>
-              <span class="status">Graduated 2023</span>
-            </div>
-            <div class="institution">DAV International School, Kharghar</div>
-            <p class="desc">Completed higher secondary education with a growing interest in technology and computer science.</p>
-          </article>
-
-          <article class="entry purple-box">
-            <div class="entry-header">
-              <h3>Class 10, CBSE</h3>
-              <span class="status">Graduated 2021</span>
-            </div>
-            <div class="institution">Radcliffe School, Kharghar</div>
-            <p class="desc">An early foundation in curiosity, learning, and problem-solving.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="ticker">
-      <div class="ticker-track">
-        <span>SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT ✦ SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT &nbsp;</span>
-        <span>SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT ✦ SAY HI ✦ LEAVE A NOTE ✦ DROP A COMMENT &nbsp;</span>
-      </div>
-    </div>
-
-    <section class="contact" id="contact">
-      <div class="wrap">
-        <p class="section-label">[ 05 — CONTACT ]</p>
-        <h2>Let’s Connect.</h2>
-        <p>Say hello, share a thought, or start a conversation. I'm always excited to connect with curious people.</p>
-        <a class="button" href="mailto:tanisha.biswal@gmail.com">SEND ME A NOTE ↗</a>
-      </div>
-    </section>
-
-    <footer class="wrap">
-      <div>
-        <strong>portfolio</strong> &nbsp; Tanisha Biswal © 2026
-        <div class="footer-signoff">
-          <p>Crafted &amp; Coded by</p>
-          <img src="signature.svg" alt="Tanisha Biswal Signature" class="footer-sig" onerror="this.style.display='none'" />
-          <div class="stamp">OFFICIAL ✦</div>
-        </div>
-      </div>
-      <div class="socials">
-        <a href="https://github.com/tanishasgit">GitHub</a>
-        <a href="https://www.linkedin.com/in/tanisha-biswal">LinkedIn</a>
-        <a href="mailto:tanisha.biswal@gmail.com">Email</a>
-      </div>
-    </footer>
-
-    <script>
-      /* --- Theme Toggle --- */
-      const btn = document.getElementById('themeToggle');
-      btn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-          document.documentElement.removeAttribute('data-theme');
-          btn.textContent = '🌙';
-        } else {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          btn.textContent = '☀️';
-        }
-      });
-
-      /* --- NEW: Cursor-following grid blob (snaps to the 40px background grid) --- */
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!prefersReducedMotion && window.matchMedia('(min-width: 761px)').matches) {
-        const blob = document.createElement('div');
-        blob.className = 'grid-blob';
-        document.body.appendChild(blob);
-        const GRID_SIZE = 40;
-        window.addEventListener('mousemove', (e) => {
-          const snappedX = Math.round(e.clientX / GRID_SIZE) * GRID_SIZE;
-          const snappedY = Math.round(e.clientY / GRID_SIZE) * GRID_SIZE;
-          blob.style.left = snappedX + 'px';
-          blob.style.top = snappedY + 'px';
-        });
-      }
-
-      /* --- NEW: Active nav link highlighting on scroll --- */
-      const navLinks = Array.from(document.querySelectorAll('.links a[href^="#"]'));
-      const navSections = navLinks
-        .map(link => document.querySelector(link.getAttribute('href')))
-        .filter(Boolean);
-      const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const activeHref = '#' + entry.target.id;
-            navLinks.forEach(link => {
-              link.classList.toggle('active', link.getAttribute('href') === activeHref);
-            });
-          }
-        });
-      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-      navSections.forEach(section => navObserver.observe(section));
-
-      /* --- NEW: Scroll-triggered reveal animations for project cards & journey entries --- */
-      const revealTargets = document.querySelectorAll('.card, .entry');
-      if (prefersReducedMotion) {
-        revealTargets.forEach(el => el.classList.add('reveal', 'is-visible'));
-      } else {
-        revealTargets.forEach(el => el.classList.add('reveal'));
-        const revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 });
-        revealTargets.forEach(el => revealObserver.observe(el));
-      }
-
-      /* --- NEW: Sticker wiggle on scroll (subtle parallax rotation) --- */
-      if (!prefersReducedMotion) {
-        const stickers = document.querySelectorAll('.sticker');
-        window.addEventListener('scroll', () => {
-          stickers.forEach((sticker, i) => {
-            const dir = i % 2 === 0 ? 1 : -1;
-            const rotation = ((window.scrollY * 0.03 * dir) % 10);
-            sticker.style.transform = `rotate(${rotation}deg)`;
-          });
-        }, { passive: true });
-      }
-
-      /* --- NEW: Project card 3D tilt-on-hover --- */
-      if (!prefersReducedMotion) {
-        document.querySelectorAll('.card').forEach(card => {
-          card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
-            const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
-            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-          });
-          card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-          });
-        });
-      }
-    </script>
-  </body>
-</html>
+            <div class="institution">Siksha 'O' Anusand
